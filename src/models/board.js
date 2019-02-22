@@ -30,22 +30,22 @@ class Board {
 
   }
 
-  hasTicTacToe(symbol) {
+  hasMatch(symbol) {
     for (let i = 0; i < this.matrix.length; i++) {
-      if (this.isTicTacToeSet(this.matrix[i], symbol)) return true;
+      if (this.isWinnerSet(this.matrix[i], symbol)) return true;
     }
 
     for (let i = 0; i < this.matrix.length; i++) {
-      if (this.isTicTacToeSet(this.getColumn(i), symbol)) return true;
+      if (this.isWinnerSet(this.getColumn(i), symbol)) return true;
     }
 
-    if (this.isTicTacToeSet(this.getDiagonal(), symbol)) return true;
+    if (this.isWinnerSet(this.getDiagonal(), symbol)) return true;
 
-    if (this.isTicTacToeSet(this.getDiagonal(true), symbol)) return true;
+    if (this.isWinnerSet(this.getDiagonal(true), symbol)) return true;
   }
 
-  isTicTacToeSet(row, symbol) {
-    return row.length === row
+  isWinnerSet(set, symbol) {
+    return set.length === set
       .map((item) => item === symbol ? 1 : 0)
       .reduce((accumulator, currentValue) => accumulator + currentValue);
   }
@@ -63,7 +63,6 @@ class Board {
       .split(',')
       .map((value) => parseInt(value));
 
-    // console.log('>>>', row, col, this.matrix);
     this.checkAvailability(row, col);
 
     this.matrix[row][col] = symbol;
@@ -71,7 +70,6 @@ class Board {
 
   checkAvailability(row, col) {
     if (this.matrix[row][col] !== EMPTY) {
-      console.log(123123, row, col, this.matrix[row][col]);
       throw 'Cell is already used.';
     }
   }

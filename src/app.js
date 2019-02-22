@@ -57,4 +57,9 @@ app.post('/games/:id/play', (req, res) => {
     });
 });
 
-app.listen(PORT, () => { console.log(`Server running at port ${PORT}.`)});
+app.listen(PORT, () => {
+  console.log('###############################################');
+  console.log('#               Tic Tac Toe API               #');
+  console.log('###############################################');
+  console.log(`Server running at port:S ${PORT}.`);
+});

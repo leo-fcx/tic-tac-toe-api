@@ -21,7 +21,7 @@ class Game {
 
   checkForWinner() {
     for (let [playerId, player] of this.players) {
-      if (this.board.hasTicTacToe(player.symbol)) {
+      if (this.board.hasMatch(player.symbol)) {
         this.winner = player;
         break;
       }
