@@ -3,7 +3,7 @@ import GameController from './controllers/game';
 import Player from './models/player';
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 app.use(express.json());
 
@@ -61,5 +61,5 @@ app.listen(PORT, () => {
   console.log('###############################################');
   console.log('#               Tic Tac Toe API               #');
   console.log('###############################################');
-  console.log(`Server running at port:S ${PORT}.`);
+  console.log(`Server running at port:Sp ${PORT}.`);
 });
