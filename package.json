@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node src/app.js",
+    "test": "mocha --require babel-register"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.2.0",
+    "express": "^4.16.4",
+    "mocha": "^6.0.0",
+    "uuid": "^3.3.2"
+  },
+  "engines": {
+    "node": "8.15.0"
+  }
+}
